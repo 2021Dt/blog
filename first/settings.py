@@ -132,9 +132,9 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.qq.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "3046949099@qq.com"
-EMAIL_HOST_PASSWORD = 'lhuvolqeonzhdeha'
-DEFAULT_FROM_EMAIL = '3046949099@qq.com'
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = ''
 
 # 配置上传文件存储方式
 # 本地存储
