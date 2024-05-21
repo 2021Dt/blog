@@ -1,0 +1,155 @@
+/* 重置默认的边距和内边距 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* 设置默认字体 */
+}
+
+/* 样式化主容器 */
+main {
+    height: 100vh; /* 设置高度为视口高度的100% */
+    display: flex; /* 使用弹性盒模型布局 */
+    justify-content: center; /* 水平居中对齐内容 */
+    align-items: center; /* 垂直居中对齐内容 */
+    font-size: 16px; /* 设置默认字体大小 */
+    background: linear-gradient(#141e30, #243b55); /* 应用渐变背景 */
+    color: #03e9f4; /* 设置文本颜色 */
+}
+
+/* 样式化登录容器，并放大 */
+.login-container {
+    position: fixed; /* 设置为固定定位 */
+    top: 50%; /* 上边缘距离父级顶部的距离为50% */
+    left: 50%; /* 左边缘距离父级左侧的距离为50% */
+    transform: translate(-50%, -50%); /* 使用transform属性将元素水平和垂直居中 */
+    width: 500px; /* 增加宽度 */
+    height: 550px; /* 增加高度 */
+    max-width: 90%; /* 限制最大宽度为90% */
+    max-height: 90%; /* 限制最大高度为90% */
+    margin: 0 auto; /* 保持水平居中 */
+    padding: 20px; /* 添加内边距 */
+    background-color: #1e1e2f; /* 设置背景颜色 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 添加阴影效果 */
+}
+
+
+
+
+form h1 {
+    margin-bottom: 20px;
+    color: #00d4ff;
+}
+
+form .mb-3 {
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #a0a0a0;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.custom-button {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    color: #03e9f4;
+    transition: color 0.3s ease;
+}
+
+.custom-button:hover {
+    color: #00bcd4;
+}
+
+.custom-button span {
+    position: absolute;
+}
+
+.custom-button span:nth-child(1) {
+    width: 100%;
+    height: 2px;
+    background: -webkit-linear-gradient(left, transparent, #03e9f4);
+    left: -100%;
+    top: 0px;
+    animation: line1 1s linear infinite;
+}
+
+@keyframes line1 {
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.custom-button span:nth-child(2) {
+    width: 2px;
+    height: 100%;
+    background: -webkit-linear-gradient(top, transparent, #03e9f4);
+    right: 0px;
+    top: -100%;
+    animation: line2 1s 0.25s linear infinite;
+}
+
+@keyframes line2 {
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+.custom-button span:nth-child(3) {
+    width: 100%;
+    height: 2px;
+    background: -webkit-linear-gradient(left, #03e9f4, transparent);
+    left: 100%;
+    bottom: 0px;
+    animation: line3 1s 0.75s linear infinite;
+}
+
+@keyframes line3 {
+    50%, 100% {
+        left: -100%;
+    }
+}
+
+.custom-button span:nth-child(4) {
+    width: 2px;
+    height: 100%;
+    background: -webkit-linear-gradient(top, transparent, #03e9f4);
+    left: 0px;
+    top: 100%;
+    animation: line4 1s 1s linear infinite;
+}
+
+@keyframes line4 {
+    50%, 100% {
+        top: -100%;
+    }
+}
+
+form p {
+    margin-top: 10px;
+}
+
+form p a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+form p a:hover {
+    text-decoration: underline;
+}

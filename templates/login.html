@@ -1,0 +1,51 @@
+{%  extends 'base_login_rigister.html' %}
+
+{% block title %}欢迎使用{% endblock %}
+{%  block head %}<link rel="stylesheet" href="{% static 'css/login.css' %}">{% endblock %}
+
+{% block main %}
+    <div>
+        <h1>登录</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label>邮箱</label>
+                <input type="email" name="email" class="form-control" placeholder="邮箱">
+            </div>
+            <div class="mb-3">
+                <label>密码</label>
+                <input type="password" name="password" class="form-control" placeholder="密码">
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="remember" value="1" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    记住我
+                </label>
+            </div>
+            {% if form.non_field_errors %}
+                    <div class="error-message">
+                        {{ form.non_field_errors.0 }}
+                    </div>
+                {% endif %}
+            <div class="mb-3">
+                <button class="btn btn-primary w-100 login-button custom-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    立即登录
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const errorMessage = document.querySelector(".error-message");
+            if (errorMessage) {
+                setTimeout(function() {
+                    errorMessage.style.display = 'none';
+                }, 6000); // 6000 milliseconds = 6 seconds
+            }
+        });
+    </script>
+{% endblock %}

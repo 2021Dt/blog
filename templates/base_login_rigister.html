@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{%  endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/background.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+<header class="p-3 text-bg-light border-bottom custom-navbar mb-3">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="{% static 'img/favicon.png' %}" alt="" width="40" height="40">
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 text-secondary">首页</a></li>
+                <li><a href="#" class="nav-link px-2 text-secondary">特性</a></li>
+                <li><a href="{% url 'blog:pub_blog' %}" class="nav-link px-2 text-secondary">发布博客</a></li>
+                <li><a href="#" class="nav-link px-2 text-secondary">问题</a></li>
+                <li><a href="https://2021dt.github.io/" class="nav-link px-2 text-secondary">关于我</a></li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control form-control-light text-bg-light" placeholder="搜索..." aria-label="Search">
+            </form>
+
+            <div class="text-end">
+                <a href='{% url 'dpauth:login' %}' type="button" class="btn btn-outline-primary me-2">登录</a>
+                <a href='{% url 'dpauth:register' %}' type="button" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="login-container">
+    {% block main %}{% endblock %}
+</main>
+</body>
+</html>
